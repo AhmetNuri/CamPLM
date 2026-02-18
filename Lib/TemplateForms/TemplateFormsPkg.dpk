@@ -38,6 +38,9 @@ requires
 contains
   FormDataModel in 'FormDataModel.pas',
   FormController in 'FormController.pas',
-  TemplateForm in 'TemplateForm.pas' {TemplateFormInstance};
+  TemplateForm in 'TemplateForm.pas' {TemplateFormInstance},
+  ListBoxHelper in 'ListBoxHelper.pas',
+  StringGridHelper in 'StringGridHelper.pas',
+  LangComponent in 'LangComponent.pas';
 
 end.

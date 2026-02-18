@@ -56,6 +56,54 @@ MyForm := TMyForm.Create(Self, FDConnection1, 'TableName', 'CustomID');
 ✅ TDateEdit
 ✅ TTimeEdit
 ✅ TSpinBox
+✅ TListBox (JSON import/export)
+✅ TStringGrid (JSON import/export)
+
+## Yeni Özellikler (v1.1.0)
+
+### TListBox JSON İşlemleri
+
+```pascal
+// JSON'a aktar
+var jsonStr := ListBox1.SaveToJSON;
+
+// JSON'dan yükle
+ListBox1.LoadFromJSON(jsonStr);
+
+// Temizle
+ListBox1.ClearItems;
+```
+
+### TStringGrid JSON İşlemleri
+
+```pascal
+// JSON'a aktar
+var jsonStr := StringGrid1.SaveToJSON;
+
+// JSON'dan yükle
+StringGrid1.LoadFromJSON(jsonStr);
+
+// Temizle
+StringGrid1.ClearGrid;
+```
+
+### Çok Dilli Destek (TLang)
+
+```pascal
+// Dil çevirilerini ayarla
+Lang.SetControlTranslation('ButtonSave', 'en', 'Save');
+Lang.SetControlTranslation('ButtonSave', 'tr', 'Kaydet');
+Lang.SetControlTranslation('ButtonSave', 'de', 'Speichern');
+
+// Dili değiştir
+Lang.CurrentLanguage := 'tr'; // Türkçe
+Lang.CurrentLanguage := 'en'; // English
+Lang.CurrentLanguage := 'de'; // Deutsch
+
+// Çevirileri kaydet/yükle
+Lang.SaveToFile('translations.json');
+Lang.LoadFromFile('translations.json');
+```
 
 ## Hook Metodları
 

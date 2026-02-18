@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FireDAC.Comp.Client, FireDAC.Stan.Param,
-  FormDataModel, FormController;
+  FormDataModel, FormController, LangComponent;
 
 type
   /// <summary>
@@ -21,6 +21,7 @@ type
     FDataModel: TFormDataModel;
     FController: TFormController;
     FFDQuery1: TFDQuery;
+    FLang: TLang;
     
     procedure SetConnection(AConnection: TFDConnection; const ATableName: string;
       const APrimaryKeyField: string = 'ID'; const AUIJSONField: string = 'UIJSON');
@@ -119,6 +120,11 @@ type
     /// Access to the controller
     /// </summary>
     property Controller: TFormController read FController;
+    
+    /// <summary>
+    /// Access to the multi-language component
+    /// </summary>
+    property Lang: TLang read FLang;
   end;
 
 var
@@ -143,10 +149,15 @@ begin
   // Initialize MVC components
   FDataModel := TFormDataModel.Create(AConnection, ATableName, APrimaryKeyField, AUIJSONField);
   FController := TFormController.Create(Self);
+  
+  // Initialize multi-language component
+  FLang := TLang.Create(Self);
+  FLang.Initialize(Self);
 end;
 
 destructor TTemplateForm.Destroy;
 begin
+  FLang.Free;
   FController.Free;
   FDataModel.Free;
   // FFDQuery1 will be freed automatically as it's owned by Self

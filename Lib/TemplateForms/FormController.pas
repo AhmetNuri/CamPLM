@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Classes, System.JSON, System.Generics.Collections,
   FMX.Controls, FMX.StdCtrls, FMX.Edit, FMX.NumberBox, FMX.Memo, FMX.ListBox,
-  FMX.DateTimeCtrls, FMX.SpinBox, FMX.Forms;
+  FMX.DateTimeCtrls, FMX.SpinBox, FMX.Forms, FMX.Grid,
+  ListBoxHelper, StringGridHelper;
 
 type
   /// <summary>
@@ -86,7 +87,9 @@ begin
             (AControl is TRadioButton) or
             (AControl is TDateEdit) or
             (AControl is TTimeEdit) or
-            (AControl is TSpinBox);
+            (AControl is TSpinBox) or
+            (AControl is TListBox) or
+            (AControl is TStringGrid);
 end;
 
 procedure TFormController.FindDataControls(AContainer: TFmxObject; AList: TList<TControl>);
@@ -116,6 +119,8 @@ begin
 end;
 
 function TFormController.GetControlValue(AControl: TControl): TJSONValue;
+var
+  JSONStr: string;
 begin
   Result := nil;
   
@@ -143,6 +148,16 @@ begin
       Result := TJSONString.Create(TimeToStr(TTimeEdit(AControl).Time))
     else if AControl is TSpinBox then
       Result := TJSONNumber.Create(TSpinBox(AControl).Value)
+    else if AControl is TListBox then
+    begin
+      JSONStr := TListBox(AControl).SaveToJSON;
+      Result := TJSONString.Create(JSONStr);
+    end
+    else if AControl is TStringGrid then
+    begin
+      JSONStr := TStringGrid(AControl).SaveToJSON;
+      Result := TJSONString.Create(JSONStr);
+    end
     else
       Result := TJSONNull.Create;
   except
@@ -232,6 +247,16 @@ begin
         TSpinBox(AControl).Value := TJSONNumber(AValue).AsDouble
       else
         TSpinBox(AControl).Value := StrToFloatDef(AValue.Value, 0);
+    end
+    else if AControl is TListBox then
+    begin
+      if AValue is TJSONString then
+        TListBox(AControl).LoadFromJSON(AValue.Value);
+    end
+    else if AControl is TStringGrid then
+    begin
+      if AValue is TJSONString then
+        TStringGrid(AControl).LoadFromJSON(AValue.Value);
     end;
   except
     on E: Exception do
@@ -369,7 +394,11 @@ begin
         else if Control is TTimeEdit then
           TTimeEdit(Control).Time := Now
         else if Control is TSpinBox then
-          TSpinBox(Control).Value := 0;
+          TSpinBox(Control).Value := 0
+        else if Control is TListBox then
+          TListBox(Control).ClearItems
+        else if Control is TStringGrid then
+          TStringGrid(Control).ClearGrid;
       except
         // Skip on error
       end;
