@@ -377,6 +377,7 @@ var
   ControlObj: TJSONObject;
   I, J: Integer;
   Language, Translation: string;
+  LangDict: TDictionary<string, string>;
 begin
   Result := False;
   
@@ -397,8 +398,8 @@ begin
     JSONObj := JSONValue as TJSONObject;
     try
       // Clear existing translations
-      for ControlObj in FTranslations.Values do
-        ControlObj.Free;
+      for LangDict in FTranslations.Values do
+        LangDict.Free;
       FTranslations.Clear;
       
       // Load translations from JSON

@@ -55,11 +55,8 @@ begin
       begin
         JSONCol := TJSONObject.Create;
         JSONCol.AddPair('index', TJSONNumber.Create(Col));
-        if Col < Self.ColumnCount then
-        begin
-          JSONCol.AddPair('header', Self.Columns[Col].Header);
-          JSONCol.AddPair('width', TJSONNumber.Create(Self.Columns[Col].Width));
-        end;
+        JSONCol.AddPair('header', Self.Columns[Col].Header);
+        JSONCol.AddPair('width', TJSONNumber.Create(Self.Columns[Col].Width));
         JSONColumns.AddElement(JSONCol);
       end;
       JSONObj.AddPair('columns', JSONColumns);
