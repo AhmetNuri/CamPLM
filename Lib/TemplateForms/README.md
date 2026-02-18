@@ -11,6 +11,8 @@ Bu kütüphane, Delphi FireMonkey platformu için basit ama güçlü bir form ta
 - **Dinamik Yapı**: Hangi kontrollerin formda olduğu otomatik algılanır
 - **Hata Yönetimi**: Tüm kritik noktalarda try-except blokları ile güvenli çalışma
 - **SOLID Prensipleri**: Temiz kod ve bakım kolaylığı için SOLID prensiplerine uygun tasarım
+- **TListBox & TStringGrid Desteği**: Class helper'lar ile JSON import/export
+- **Çok Dilli Destek**: TLang bileşeni ile kolay çoklu dil yönetimi
 
 ## Desteklenen Kontroller
 
@@ -25,6 +27,8 @@ Framework aşağıdaki FireMonkey kontrollerini otomatik olarak destekler:
 - TDateEdit
 - TTimeEdit
 - TSpinBox
+- **TListBox** (JSON import/export ile)
+- **TStringGrid** (JSON import/export ile)
 
 ## Mimari
 
@@ -41,12 +45,34 @@ UI kontrolleri ve JSON arasında dönüşüm yapar:
 - Kontrol değerlerini JSON'a serileştirir
 - JSON'dan kontrol değerlerini yükler
 - Dinamik kontrol keşfi
+- TListBox ve TStringGrid için özel destek
 
 ### 3. View Katmanı (TemplateForm.pas)
 Base form sınıfı:
 - Model ve Controller'ı bir araya getirir
 - Public API sağlar
 - Override edilebilir hook metodları
+- Entegre TLang bileşeni ile çok dilli destek
+
+### 4. Class Helper'lar
+#### ListBoxHelper.pas
+TListBox için JSON import/export yetenekleri:
+- `SaveToJSON`: Tüm items'ları JSON dizisi olarak dışa aktarır
+- `LoadFromJSON`: JSON dizisinden items'ları yükler
+- `ClearItems`: Tüm items'ları temizler
+
+#### StringGridHelper.pas
+TStringGrid için JSON import/export yetenekleri:
+- `SaveToJSON`: Tüm grid verisini (sütunlar ve satırlar) JSON olarak dışa aktarır
+- `LoadFromJSON`: JSON'dan grid verisini yükler
+- `ClearGrid`: Tüm grid verisini temizler
+
+### 5. Çok Dilli Destek (LangComponent.pas)
+TLang bileşeni ile çoklu dil yönetimi:
+- Dinamik dil değiştirme
+- JSON tabanlı çeviri dosyaları
+- TLabel, TButton, TCheckBox, TRadioButton gibi metin bileşenleri için otomatik destek
+- Dosyaya kaydetme/yükleme yetenekleri
 
 ## Kurulum
 
@@ -372,7 +398,162 @@ end;
   "DateEditRegistration": "18.02.2026",
   "NumberBoxAge": 35,
   "ComboBoxCity": "Istanbul",
-  "SpinBoxRating": 5
+  "SpinBoxRating": 5,
+  "ListBoxTags": "[{\"text\":\"VIP\",\"selected\":false},{\"text\":\"Premium\",\"selected\":true}]",
+  "StringGridOrders": "{\"columns\":[{\"index\":0,\"header\":\"Order ID\",\"width\":80}],\"rows\":[[\"1001\",\"Widget A\",\"5\",\"$50.00\"]]}"
+}
+```
+
+### TListBox JSON Formatı
+
+TListBox verileri JSON dizisi olarak saklanır:
+
+```json
+[
+  {
+    "text": "Item 1",
+    "data": "123",
+    "selected": false
+  },
+  {
+    "text": "Item 2",
+    "data": "456",
+    "selected": true
+  }
+]
+```
+
+### TStringGrid JSON Formatı
+
+TStringGrid verileri yapılandırılmış JSON nesnesi olarak saklanır:
+
+```json
+{
+  "columns": [
+    {
+      "index": 0,
+      "header": "Column 1",
+      "width": 100
+    },
+    {
+      "index": 1,
+      "header": "Column 2",
+      "width": 150
+    }
+  ],
+  "rows": [
+    ["Cell 1-1", "Cell 1-2"],
+    ["Cell 2-1", "Cell 2-2"]
+  ],
+  "rowCount": 2,
+  "columnCount": 2
+}
+```
+
+## TListBox ve TStringGrid Kullanımı
+
+### TListBox ile Çalışma
+
+```pascal
+// Items ekle
+ListBox1.Items.Add('Item 1');
+ListBox1.Items.Add('Item 2');
+
+// JSON'a aktar
+var JSONStr := ListBox1.SaveToJSON;
+
+// JSON'dan yükle
+ListBox1.LoadFromJSON(JSONStr);
+
+// Temizle
+ListBox1.ClearItems;
+```
+
+### TStringGrid ile Çalışma
+
+```pascal
+// Grid'i ayarla
+StringGrid1.RowCount := 5;
+StringGrid1.ColumnCount := 3;
+
+// Sütun başlıklarını ayarla
+StringGrid1.Columns[0].Header := 'ID';
+StringGrid1.Columns[1].Header := 'Name';
+StringGrid1.Columns[2].Header := 'Value';
+
+// Hücre değerlerini ayarla
+StringGrid1.Cells[0, 0] := '1';
+StringGrid1.Cells[1, 0] := 'Product A';
+StringGrid1.Cells[2, 0] := '100';
+
+// JSON'a aktar
+var JSONStr := StringGrid1.SaveToJSON;
+
+// JSON'dan yükle
+StringGrid1.LoadFromJSON(JSONStr);
+
+// Temizle
+StringGrid1.ClearGrid;
+```
+
+## Çok Dilli Destek Kullanımı
+
+### TLang Bileşenini Kullanma
+
+```pascal
+// Form oluşturulduğunda TLang otomatik olarak başlatılır
+procedure TMyForm.FormCreate(Sender: TObject);
+begin
+  inherited;
+  
+  // Çevirileri ayarla
+  Lang.SetControlTranslation('ButtonSave', 'en', 'Save');
+  Lang.SetControlTranslation('ButtonSave', 'tr', 'Kaydet');
+  Lang.SetControlTranslation('ButtonSave', 'de', 'Speichern');
+  
+  Lang.SetControlTranslation('Label1', 'en', 'Customer Name:');
+  Lang.SetControlTranslation('Label1', 'tr', 'Müşteri Adı:');
+  Lang.SetControlTranslation('Label1', 'de', 'Kundenname:');
+end;
+
+// Dili değiştir
+procedure TMyForm.ComboBoxLanguageChange(Sender: TObject);
+begin
+  case ComboBoxLanguage.ItemIndex of
+    0: Lang.CurrentLanguage := 'en';
+    1: Lang.CurrentLanguage := 'tr';
+    2: Lang.CurrentLanguage := 'de';
+  end;
+  // Tüm çeviriler otomatik olarak uygulanır
+end;
+
+// Çevirileri JSON'a aktar
+var JSONStr := Lang.SaveToJSON;
+
+// JSON'dan çevirileri yükle
+Lang.LoadFromJSON(JSONStr);
+
+// Dosyaya kaydet
+Lang.SaveToFile('translations.json');
+
+// Dosyadan yükle
+Lang.LoadFromFile('translations.json');
+```
+
+### Çeviri Dosyası Formatı
+
+```json
+{
+  "ButtonSave": {
+    "en": "Save",
+    "tr": "Kaydet",
+    "de": "Speichern"
+  },
+  "Label1": {
+    "en": "Customer Name:",
+    "tr": "Müşteri Adı:",
+    "de": "Kundenname:"
+  }
 }
 ```
 
@@ -383,6 +564,8 @@ end;
 3. **UIJSON Alanı**: Her tabloda mutlaka UIJSON adında bir alan bulunmalıdır
 4. **Primary Key**: Varsayılan olarak "ID" kullanılır, farklı bir alan kullanıyorsanız constructor'da belirtin
 5. **Thread Safety**: Framework thread-safe değildir, ana UI thread'den kullanın
+6. **TLang Component**: TLang bileşeni form oluşturulduğunda otomatik olarak başlatılır ve `Lang` property'si ile erişilir
+7. **Class Helpers**: TListBox ve TStringGrid için class helper'lar otomatik olarak kullanılır, ek kurulum gerekmez
 
 ## Lisans
 
