@@ -1,0 +1,263 @@
+object ExampleCustomerForm: TExampleCustomerForm
+  Left = 0
+  Top = 0
+  Caption = 'Customer Management - Example Form'
+  ClientHeight = 640
+  ClientWidth = 520
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Customer Name:'
+  end
+  object EditCustomerName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 16.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label2: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Email:'
+  end
+  object EditEmail: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 16.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label3: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Phone:'
+  end
+  object EditPhone: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 16.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label4: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Notes:'
+  end
+  object MemoNotes: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 16.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 489.000000000000000000
+    Size.Height = 89.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Viewport.Width = 485.000000000000000000
+    Viewport.Height = 85.000000000000000000
+  end
+  object CheckBoxActive: TCheckBox
+    Position.X = 16.000000000000000000
+    Position.Y = 464.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Active Customer'
+  end
+  object Label5: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Registration Date:'
+  end
+  object DateEditRegistration: TDateEdit
+    Date = 45706.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object ButtonSave: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 568.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = 'Save'
+    OnClick = ButtonSaveClick
+  end
+  object ButtonNew: TButton
+    Position.X = 136.000000000000000000
+    Position.Y = 568.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = 'New'
+    OnClick = ButtonNewClick
+  end
+  object ButtonDelete: TButton
+    Position.X = 256.000000000000000000
+    Position.Y = 568.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Delete'
+    OnClick = ButtonDeleteClick
+  end
+  object ButtonLoad: TButton
+    Position.X = 440.000000000000000000
+    Position.Y = 528.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Load'
+    OnClick = ButtonLoadClick
+  end
+  object Label6: TLabel
+    Position.X = 264.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Age:'
+  end
+  object NumberBoxAge: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 264.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label7: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 272.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'City:'
+  end
+  object ComboBoxCity: TComboBox
+    Position.X = 16.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object Label8: TLabel
+    Position.X = 264.000000000000000000
+    Position.Y = 272.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Rating (0-10):'
+  end
+  object SpinBoxRating: TSpinBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 264.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ButtonShowJSON: TButton
+    Position.X = 376.000000000000000000
+    Position.Y = 568.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = 'Show JSON'
+    OnClick = ButtonShowJSONClick
+  end
+  object RadioButtonMale: TRadioButton
+    GroupName = 'Gender'
+    Position.X = 176.000000000000000000
+    Position.Y = 464.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Male'
+  end
+  object RadioButtonFemale: TRadioButton
+    GroupName = 'Gender'
+    Position.X = 264.000000000000000000
+    Position.Y = 464.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+    Text = 'Female'
+  end
+  object Label9: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 496.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Preferred Contact Time:'
+  end
+  object TimeEditPreferredContactTime: TTimeEdit
+    Time = 0.285706412037052400
+    Position.X = 16.000000000000000000
+    Position.Y = 520.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+  end
+  object Label10: TLabel
+    Position.X = 264.000000000000000000
+    Position.Y = 496.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Load Record by ID:'
+  end
+  object EditLoadID: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 17
+    Position.X = 264.000000000000000000
+    Position.Y = 528.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+end
