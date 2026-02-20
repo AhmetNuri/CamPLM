@@ -82,7 +82,7 @@ var
   JSONValue: TJSONValue;
   I: Integer;
   ItemText: string;
-  ItemData: NativeInt;
+  ItemData: Int64;
   IsSelected: Boolean;
   ListItem: TListBoxItem;
 begin

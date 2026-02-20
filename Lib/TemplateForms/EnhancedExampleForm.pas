@@ -1,4 +1,4 @@
-unit EnhancedExampleForm;
+﻿unit EnhancedExampleForm;
 
 interface
 
@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Edit, FMX.Controls.Presentation, FMX.Memo, FMX.DateTimeCtrls, FMX.NumberBox,
   FMX.ListBox, FMX.SpinBox, FMX.Grid, FireDAC.Comp.Client,
-  TemplateForm;
+  TemplateForm, FMX.Memo.Types, System.Rtti, FMX.Grid.Style, FMX.Layouts,
+  FMX.ScrollBox, FMX.EditBox, FMX.Objects, StringGridHelper;
 
 type
   /// <summary>
@@ -71,7 +72,7 @@ type
   end;
 
 var
-  EnhancedExampleForm: TEnhancedExampleForm;
+  FrmEnhancedExampleForm: TEnhancedExampleForm;
 
 implementation
 
@@ -200,8 +201,8 @@ procedure TEnhancedExampleForm.InitializeGrid;
 begin
   // Setup StringGrid columns
   StringGridOrders.RowCount := 5;
-  StringGridOrders.ColumnCount := 4;
-  
+  StringGridOrders.AddColumns ( 4);
+
   // Set column headers
   if StringGridOrders.ColumnCount > 0 then
   begin
@@ -311,7 +312,7 @@ end;
 
 procedure TEnhancedExampleForm.ButtonClearTagsClick(Sender: TObject);
 begin
-  ListBoxTags.ClearItems;
+  ListBoxTags.Clear;
 end;
 
 procedure TEnhancedExampleForm.ButtonSetupGridClick(Sender: TObject);

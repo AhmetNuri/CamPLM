@@ -1,0 +1,677 @@
+object EnhancedExampleForm: TEnhancedExampleForm
+  Left = 0
+  Top = 0
+  Caption = 'Enhanced Customer Management System'
+  ClientHeight = 720
+  ClientWidth = 1024
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object LayoutMain: TLayout
+    Align = Client
+    Size.Width = 1024.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object RectangleBackground: TRectangle
+      Align = Client
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = claBlack
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = claWhite
+          Offset = 1.000000000000000000
+        end>
+      Size.Width = 1024.000000000000000000
+      Size.Height = 560.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object LayoutHeader: TLayout
+      Align = Top
+      Size.Width = 1024.000000000000000000
+      Size.Height = 80.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object RectangleHeader: TRectangle
+        Align = Client
+        Fill.Color = xFF2C3E50
+        Size.Width = 1024.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object LabelTitle: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Left = 20.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Margins.Right = 20.000000000000000000
+          Margins.Bottom = 15.000000000000000000
+          Size.Width = 740.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 28.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          Text = 'Customer Management System'
+        end
+        object Label10: TLabel
+          Align = Right
+          StyledSettings = [Family, Size, Style]
+          Margins.Top = 25.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 25.000000000000000000
+          Position.X = 780.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Trailing
+          Text = 'Language:'
+        end
+        object ComboBoxLanguage: TComboBox
+          Align = Right
+          Margins.Top = 20.000000000000000000
+          Margins.Right = 20.000000000000000000
+          Margins.Bottom = 20.000000000000000000
+          Position.X = 870.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 134.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnChange = ComboBoxLanguageChange
+        end
+      end
+    end
+    object LayoutContent: TLayout
+      Align = Client
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Size.Width = 984.000000000000000000
+      Size.Height = 530.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object LayoutLeft: TLayout
+        Align = Left
+        Size.Width = 480.000000000000000000
+        Size.Height = 530.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object RectangleCustomerInfo: TRectangle
+          Align = Top
+          Fill.Color = claWhite
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 480.000000000000000000
+          Size.Height = 380.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFBDC3C7
+          XRadius = 8.000000000000000000
+          YRadius = 8.000000000000000000
+          object LayoutCustomerForm: TLayout
+            Align = Client
+            Margins.Left = 20.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Margins.Right = 20.000000000000000000
+            Margins.Bottom = 15.000000000000000000
+            Size.Width = 440.000000000000000000
+            Size.Height = 350.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object LabelSectionCustomer: TLabel
+              Align = Top
+              StyledSettings = [Family]
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF2C3E50
+              Text = 'Customer Information'
+            end
+            object Label1: TLabel
+              Align = Top
+              StyledSettings = [Family, Size, Style]
+              Margins.Top = 35.000000000000000000
+              Position.Y = 70.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = xFF34495E
+              Text = 'Customer Name:'
+            end
+            object EditCustomerName: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Top
+              TabOrder = 0
+              TextSettings.FontColor = xFF2C3E50
+              Position.Y = 145.000000000000000000
+              Margins.Top = 55.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size, Style]
+            end
+            object Label2: TLabel
+              Align = Top
+              StyledSettings = [Family, Size, Style]
+              Margins.Top = 95.000000000000000000
+              Position.Y = 280.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = xFF34495E
+              Text = 'Email:'
+            end
+            object EditEmail: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Top
+              TabOrder = 1
+              KeyboardType = EmailAddress
+              TextSettings.FontColor = xFF2C3E50
+              Position.Y = 415.000000000000000000
+              Margins.Top = 115.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size, Style]
+            end
+            object LayoutAgeRating: TLayout
+              Align = Top
+              Margins.Top = 155.000000000000000000
+              Position.Y = 610.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 60.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              object LayoutAge: TLayout
+                Align = Left
+                Size.Width = 210.000000000000000000
+                Size.Height = 60.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Label5: TLabel
+                  Align = Top
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 210.000000000000000000
+                  Size.Height = 20.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = xFF34495E
+                  Text = 'Age:'
+                end
+                object NumberBoxAge: TNumberBox
+                  Touch.InteractiveGestures = [LongTap, DoubleTap]
+                  Align = Top
+                  TabOrder = 0
+                  Cursor = crIBeam
+                  TextSettings.FontColor = xFF2C3E50
+                  Position.Y = 40.000000000000000000
+                  Margins.Top = 20.000000000000000000
+                  Margins.Right = 10.000000000000000000
+                  Size.Width = 200.000000000000000000
+                  Size.Height = 35.000000000000000000
+                  Size.PlatformDefault = False
+                  StyledSettings = [Family, Size, Style]
+                end
+              end
+              object LayoutRating: TLayout
+                Align = Client
+                Size.Width = 230.000000000000000000
+                Size.Height = 60.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 1
+                object Label6: TLabel
+                  Align = Top
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 230.000000000000000000
+                  Size.Height = 20.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = xFF34495E
+                  Text = 'Rating:'
+                end
+                object SpinBoxRating: TSpinBox
+                  Touch.InteractiveGestures = [LongTap, DoubleTap]
+                  Align = Top
+                  TabOrder = 0
+                  Cursor = crIBeam
+                  Position.Y = 40.000000000000000000
+                  TextSettings.FontColor = xFF2C3E50
+                  Margins.Top = 20.000000000000000000
+                  Size.Width = 230.000000000000000000
+                  Size.Height = 35.000000000000000000
+                  Size.PlatformDefault = False
+                  StyledSettings = [Family, Size, Style]
+                end
+              end
+            end
+            object Label4: TLabel
+              Align = Top
+              StyledSettings = [Family, Size, Style]
+              Margins.Top = 220.000000000000000000
+              Position.Y = 890.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = xFF34495E
+              Text = 'Registration Date:'
+            end
+            object DateEditRegistration: TDateEdit
+              Date = 46071.000000000000000000
+              Align = Top
+              Margins.Top = 240.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.Y = 1150.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size, Style]
+              TabOrder = 3
+              TextSettings.FontColor = xFF2C3E50
+            end
+            object CheckBoxActive: TCheckBox
+              Align = Top
+              StyledSettings = [Family, Size, Style]
+              Margins.Top = 285.000000000000000000
+              Position.Y = 1475.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              Text = 'Active'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF27AE60
+            end
+          end
+        end
+        object RectangleNotes: TRectangle
+          Align = Client
+          Fill.Color = claWhite
+          Size.Width = 480.000000000000000000
+          Size.Height = 140.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFBDC3C7
+          XRadius = 8.000000000000000000
+          YRadius = 8.000000000000000000
+          object LayoutNotes: TLayout
+            Align = Client
+            Margins.Left = 20.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Margins.Right = 20.000000000000000000
+            Margins.Bottom = 15.000000000000000000
+            Size.Width = 440.000000000000000000
+            Size.Height = 110.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label3: TLabel
+              Align = Top
+              StyledSettings = [Family]
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF2C3E50
+              Text = 'Notes'
+            end
+            object MemoNotes: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              DataDetectorTypes = []
+              StyledSettings = [Family, Size, Style]
+              TextSettings.FontColor = xFF2C3E50
+              Align = Client
+              Margins.Top = 35.000000000000000000
+              Size.Width = 440.000000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Viewport.Width = 440.000000000000000000
+              Viewport.Height = 40.000000000000000000
+            end
+          end
+        end
+      end
+      object LayoutRight: TLayout
+        Align = Client
+        Margins.Left = 20.000000000000000000
+        Size.Width = 484.000000000000000000
+        Size.Height = 530.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object RectangleTags: TRectangle
+          Align = Top
+          Fill.Color = claWhite
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 484.000000000000000000
+          Size.Height = 240.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFBDC3C7
+          XRadius = 8.000000000000000000
+          YRadius = 8.000000000000000000
+          object LayoutTagsContent: TLayout
+            Align = Client
+            Margins.Left = 20.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Margins.Right = 20.000000000000000000
+            Margins.Bottom = 15.000000000000000000
+            Size.Width = 444.000000000000000000
+            Size.Height = 210.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label8: TLabel
+              Align = Top
+              StyledSettings = [Family]
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF2C3E50
+              Text = 'Customer Tags'
+            end
+            object ListBoxTags: TListBox
+              Align = Client
+              Margins.Top = 35.000000000000000000
+              Margins.Bottom = 45.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              DisableFocusEffect = True
+              DefaultItemStyles.ItemStyle = ''
+              DefaultItemStyles.GroupHeaderStyle = ''
+              DefaultItemStyles.GroupFooterStyle = ''
+              Viewport.Width = 440.000000000000000000
+              Viewport.Height = 46.000000000000000000
+            end
+            object LayoutTagButtons: TLayout
+              Align = Bottom
+              Position.Y = 165.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 45.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              object ButtonAddTag: TButton
+                Align = Left
+                StyledSettings = [Family, Size]
+                Margins.Right = 10.000000000000000000
+                Size.Width = 217.000000000000000000
+                Size.Height = 45.000000000000000000
+                Size.PlatformDefault = False
+                StyleLookup = 'buttonstyle'
+                TabOrder = 0
+                Text = 'Add Tag'
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claWhite
+                OnClick = ButtonAddTagClick
+              end
+              object ButtonClearTags: TButton
+                Align = Client
+                StyledSettings = [Family, Size]
+                Size.Width = 217.000000000000000000
+                Size.Height = 45.000000000000000000
+                Size.PlatformDefault = False
+                StyleLookup = 'buttonstyle'
+                TabOrder = 1
+                Text = 'Clear Tags'
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claWhite
+                OnClick = ButtonClearTagsClick
+              end
+            end
+          end
+        end
+        object RectangleGrid: TRectangle
+          Align = Client
+          Fill.Color = claWhite
+          Size.Width = 484.000000000000000000
+          Size.Height = 280.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFBDC3C7
+          XRadius = 8.000000000000000000
+          YRadius = 8.000000000000000000
+          object LayoutGridContent: TLayout
+            Align = Client
+            Margins.Left = 20.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Margins.Right = 20.000000000000000000
+            Margins.Bottom = 15.000000000000000000
+            Size.Width = 444.000000000000000000
+            Size.Height = 250.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label9: TLabel
+              Align = Top
+              StyledSettings = [Family]
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF2C3E50
+              Text = 'Order History'
+            end
+            object StringGridOrders: TStringGrid
+              Align = Client
+              CanFocus = True
+              ClipChildren = True
+              Margins.Top = 35.000000000000000000
+              Margins.Bottom = 50.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 80.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              RowCount = 5
+              Viewport.Width = 444.000000000000000000
+              Viewport.Height = 80.000000000000000000
+            end
+            object ButtonSetupGrid: TButton
+              Align = Bottom
+              StyledSettings = [Family, Size]
+              Position.Y = 200.000000000000000000
+              Size.Width = 444.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 1
+              Text = 'Setup Grid'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonSetupGridClick
+            end
+          end
+        end
+      end
+    end
+    object LayoutFooter: TLayout
+      Align = Bottom
+      Position.Y = 640.000000000000000000
+      Size.Width = 1024.000000000000000000
+      Size.Height = 80.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object RectangleFooter: TRectangle
+        Align = Client
+        Fill.Color = xFFECF0F1
+        Size.Width = 1024.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object LayoutButtons: TLayout
+          Align = Client
+          Margins.Left = 20.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Margins.Right = 20.000000000000000000
+          Margins.Bottom = 15.000000000000000000
+          Size.Width = 984.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object LayoutLoadSection: TLayout
+            Align = Left
+            Size.Width = 300.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Label7: TLabel
+              Align = Left
+              StyledSettings = [Family, Size, Style]
+              Margins.Top = 10.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 10.000000000000000000
+              Position.Y = 10.000000000000000000
+              Size.Width = 60.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = xFF34495E
+              Text = 'Load ID:'
+            end
+            object EditLoadID: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Left
+              TabOrder = 0
+              TextSettings.FontColor = xFF2C3E50
+              Position.X = 70.000000000000000000
+              Position.Y = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 100.000000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size, Style]
+            end
+            object ButtonLoad: TButton
+              Align = Client
+              StyledSettings = [Family, Size]
+              Margins.Top = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 120.000000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 1
+              Text = 'Load'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonLoadClick
+            end
+          end
+          object LayoutActionButtons: TLayout
+            Align = Right
+            Position.X = 384.000000000000000000
+            Size.Width = 600.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object ButtonNew: TButton
+              Align = Left
+              StyledSettings = [Family]
+              Margins.Right = 10.000000000000000000
+              Size.Width = 115.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 0
+              Text = 'New'
+              TextSettings.Font.Size = 16.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonNewClick
+            end
+            object ButtonSave: TButton
+              Align = Left
+              StyledSettings = [Family]
+              Margins.Right = 10.000000000000000000
+              Position.X = 125.000000000000000000
+              Size.Width = 115.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 1
+              Text = 'Save'
+              TextSettings.Font.Size = 16.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonSaveClick
+            end
+            object ButtonDelete: TButton
+              Align = Left
+              StyledSettings = [Family]
+              Margins.Right = 10.000000000000000000
+              Position.X = 250.000000000000000000
+              Size.Width = 115.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 2
+              Text = 'Delete'
+              TextSettings.Font.Size = 16.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonDeleteClick
+            end
+            object ButtonShowJSON: TButton
+              Align = Left
+              StyledSettings = [Family]
+              Margins.Right = 10.000000000000000000
+              Position.X = 375.000000000000000000
+              Size.Width = 100.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 3
+              Text = 'Show JSON'
+              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonShowJSONClick
+            end
+            object ButtonExportLang: TButton
+              Align = Left
+              StyledSettings = [Family]
+              Margins.Right = 10.000000000000000000
+              Position.X = 485.000000000000000000
+              Size.Width = 100.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 4
+              Text = 'Export Lang'
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonExportLangClick
+            end
+            object ButtonImportLang: TButton
+              Align = Client
+              StyledSettings = [Family]
+              Size.Width = 5.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'buttonstyle'
+              TabOrder = 5
+              Text = 'Import Lang'
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              OnClick = ButtonImportLangClick
+            end
+          end
+        end
+      end
+    end
+  end
+end

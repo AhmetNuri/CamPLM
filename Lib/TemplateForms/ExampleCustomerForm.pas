@@ -1,4 +1,4 @@
-unit ExampleCustomerForm;
+﻿unit ExampleCustomerForm;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Edit, FMX.Controls.Presentation, FMX.Memo, FMX.DateTimeCtrls, FMX.NumberBox,
   FMX.ListBox, FMX.SpinBox, FireDAC.Comp.Client,
-  TemplateForm;
+  TemplateForm, FMX.Memo.Types, FMX.EditBox, FMX.ScrollBox;
 
 type
   /// <summary>
@@ -61,7 +61,7 @@ type
   end;
 
 var
-  ExampleCustomerForm: TExampleCustomerForm;
+  FrmExampleCustomerForm: TExampleCustomerForm;
 
 implementation
 

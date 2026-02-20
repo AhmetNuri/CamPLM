@@ -17,18 +17,56 @@ type
     /// Returns a JSON object containing columns definition and rows data
     /// </summary>
     function SaveToJSON: string;
-    
+
     /// <summary>
     /// Imports grid data from JSON format
     /// Clears existing data and loads from JSON object
     /// Returns True if successful, False otherwise
     /// </summary>
     function LoadFromJSON(const AJSON: string): Boolean;
-    
+
     /// <summary>
     /// Clears all data from the grid
     /// </summary>
     procedure ClearGrid;
+
+
+    /// <summary>
+    /// StringGrid'e belirtilen sayýda satýr ve sütun ekler
+    /// </summary>
+    /// <param name="ARowCount">Eklenecek satýr sayýsý</param>
+    /// <param name="AColumnCount">Eklenecek sütun sayýsý</param>
+    /// <param name="ADefaultColumnWidth">Varsayýlan sütun geniþliði (opsiyonel, default: 100)</param>
+    procedure AddRowsAndColumns(ARowCount, AColumnCount: Integer;
+      ADefaultColumnWidth: Single = 100);
+
+    /// <summary>
+    /// StringGrid'e sadece satýr ekler
+    /// </summary>
+    procedure AddRows(ARowCount: Integer);
+
+    /// <summary>
+    /// StringGrid'e sadece sütun ekler
+    /// </summary>
+    procedure AddColumns(AColumnCount: Integer; ADefaultWidth: Single = 100);
+
+    /// <summary>
+    /// StringGrid'i temizler ve yeni boyutlandýrýr
+    /// </summary>
+    procedure SetupGrid(ARowCount, AColumnCount: Integer;
+      ADefaultColumnWidth: Single = 100);
+
+    /// <summary>
+    /// Belirtilen sütuna baþlýk atar
+    /// </summary>
+    procedure SetColumnHeader(AColumnIndex: Integer; const AHeader: string);
+
+    /// <summary>
+    /// Tüm sütunlara baþlýk atar
+    /// </summary>
+    procedure SetColumnHeaders(const AHeaders: array of string);
+
+
   end;
 
 implementation
@@ -133,10 +171,10 @@ begin
           
         // Set grid dimensions
         if ColumnCount > 0 then
-          Self.ColumnCount := ColumnCount;
+           self.AddColumns( ColumnCount);
         if RowCount > 0 then
           Self.RowCount := RowCount;
-        
+
         // Load column information
         if JSONObj.TryGetValue<TJSONArray>('columns', JSONColumns) then
         begin
@@ -217,5 +255,87 @@ begin
     // Silent exception handling
   end;
 end;
+
+
+procedure TStringGridHelper.AddRowsAndColumns(ARowCount, AColumnCount: Integer;
+  ADefaultColumnWidth: Single = 100);
+var
+  I: Integer;
+  Column: TColumn;
+begin
+  // Önce sütunlarý ekle
+  for I := 1 to AColumnCount do
+  begin
+    Column := TStringColumn.Create(Self);
+    Column.Parent := Self;
+    Column.Width := ADefaultColumnWidth;
+    Column.Header := 'Column ' + IntToStr(Self.ColumnCount);
+  end;
+
+  // Sonra satýrlarý ekle
+  Self.RowCount := Self.RowCount + ARowCount;
+end;
+
+procedure TStringGridHelper.AddRows(ARowCount: Integer);
+begin
+  Self.RowCount := Self.RowCount + ARowCount;
+end;
+
+procedure TStringGridHelper.AddColumns(AColumnCount: Integer;
+  ADefaultWidth: Single = 100);
+var
+  I: Integer;
+  Column: TColumn;
+begin
+  for I := 1 to AColumnCount do
+  begin
+    Column := TStringColumn.Create(Self);
+    Column.Parent := Self;
+    Column.Width := ADefaultWidth;
+    Column.Header := 'Column ' + IntToStr(Self.ColumnCount);
+  end;
+end;
+
+procedure TStringGridHelper.SetupGrid(ARowCount, AColumnCount: Integer;
+  ADefaultColumnWidth: Single = 100);
+var
+  I: Integer;
+  Column: TColumn;
+begin
+  // Önce mevcut sütunlarý temizle
+  Self.ClearColumns;
+
+  // Yeni sütunlarý ekle
+  for I := 0 to AColumnCount - 1 do
+  begin
+    Column := TStringColumn.Create(Self);
+    Column.Parent := Self;
+    Column.Width := ADefaultColumnWidth;
+    Column.Header := 'Column ' + IntToStr(I + 1);
+  end;
+
+  // Satýr sayýsýný ayarla
+  Self.RowCount := ARowCount;
+end;
+
+procedure TStringGridHelper.SetColumnHeader(AColumnIndex: Integer;
+  const AHeader: string);
+begin
+  if (AColumnIndex >= 0) and (AColumnIndex < Self.ColumnCount) then
+    Self.Columns[AColumnIndex].Header := AHeader;
+end;
+
+procedure TStringGridHelper.SetColumnHeaders(const AHeaders: array of string);
+var
+  I: Integer;
+begin
+  for I := Low(AHeaders) to High(AHeaders) do
+  begin
+    if I < Self.ColumnCount then
+      Self.Columns[I].Header := AHeaders[I];
+  end;
+end;
+
+
 
 end.

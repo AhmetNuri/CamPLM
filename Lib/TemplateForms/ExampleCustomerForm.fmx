@@ -16,6 +16,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Customer Name:'
+    TabOrder = 7
   end
   object EditCustomerName: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -33,6 +34,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Email:'
+    TabOrder = 8
   end
   object EditEmail: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -50,6 +52,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Phone:'
+    TabOrder = 10
   end
   object EditPhone: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -67,6 +70,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Notes:'
+    TabOrder = 11
   end
   object MemoNotes: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -76,9 +80,9 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 489.000000000000000000
     Size.Height = 89.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 7
-    Viewport.Width = 485.000000000000000000
-    Viewport.Height = 85.000000000000000000
+    TabOrder = 12
+    Viewport.Width = 489.000000000000000000
+    Viewport.Height = 89.000000000000000000
   end
   object CheckBoxActive: TCheckBox
     Position.X = 16.000000000000000000
@@ -86,7 +90,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 145.000000000000000000
     Size.Height = 19.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 8
+    TabOrder = 13
     Text = 'Active Customer'
   end
   object Label5: TLabel
@@ -96,6 +100,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Registration Date:'
+    TabOrder = 19
   end
   object DateEditRegistration: TDateEdit
     Date = 45706.000000000000000000
@@ -112,7 +117,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 105.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 11
+    TabOrder = 20
     Text = 'Save'
     OnClick = ButtonSaveClick
   end
@@ -122,7 +127,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 105.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 12
+    TabOrder = 21
     Text = 'New'
     OnClick = ButtonNewClick
   end
@@ -132,7 +137,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 105.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 13
+    TabOrder = 22
     Text = 'Delete'
     OnClick = ButtonDeleteClick
   end
@@ -142,7 +147,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 65.000000000000000000
     Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 10
+    TabOrder = 14
     Text = 'Load'
     OnClick = ButtonLoadClick
   end
@@ -153,10 +158,12 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Age:'
+    TabOrder = 23
   end
   object NumberBoxAge: TNumberBox
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 4
+    Cursor = crIBeam
     Position.X = 264.000000000000000000
     Position.Y = 232.000000000000000000
     Size.Width = 241.000000000000000000
@@ -170,6 +177,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'City:'
+    TabOrder = 24
   end
   object ComboBoxCity: TComboBox
     Position.X = 16.000000000000000000
@@ -186,10 +194,12 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Rating (0-10):'
+    TabOrder = 25
   end
   object SpinBoxRating: TSpinBox
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 6
+    Cursor = crIBeam
     Position.X = 264.000000000000000000
     Position.Y = 296.000000000000000000
     Size.Width = 241.000000000000000000
@@ -202,7 +212,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Width = 129.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 14
+    TabOrder = 18
     Text = 'Show JSON'
     OnClick = ButtonShowJSONClick
   end
@@ -233,6 +243,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Preferred Contact Time:'
+    TabOrder = 26
   end
   object TimeEditPreferredContactTime: TTimeEdit
     Time = 0.285706412037052400
@@ -250,6 +261,7 @@ object ExampleCustomerForm: TExampleCustomerForm
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     Text = 'Load Record by ID:'
+    TabOrder = 27
   end
   object EditLoadID: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
