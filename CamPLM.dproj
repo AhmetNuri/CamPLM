@@ -144,6 +144,11 @@
             <Form>TemplateForm</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="Lib\uFileSecurityUtils.pas"/>
+        <DCCReference Include="Lib\uCentralLogger.pas"/>
+        <DCCReference Include="Lib\uExceptionHandler.pas"/>
+        <DCCReference Include="Lib\ufdConnectionHelper.pas"/>
+        <DCCReference Include="Lib\uFDQueryHelper.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
