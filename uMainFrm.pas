@@ -36,7 +36,7 @@ procedure TForm6.Button1Click(Sender: TObject);
 begin
    FrmEnhancedExampleForm := TEnhancedExampleForm.Create(self,FDConnection1,'if','1');
     try
-    FrmEnhancedExampleForm.show;
+    FrmEnhancedExampleForm.ShowModal;
    finally
      FrmEnhancedExampleForm.Free;
    end;

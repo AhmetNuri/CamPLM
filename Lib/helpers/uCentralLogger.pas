@@ -24,7 +24,7 @@ type
     class var FInstanceLock: TCriticalSection;
 
     function LevelToString(ALevel: TLogLevel): string;
-  public
+   public
     constructor Create;
     destructor Destroy; override;
 

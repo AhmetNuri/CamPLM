@@ -13,11 +13,11 @@ uses
   ListBoxHelper in 'Lib\TemplateForms\ListBoxHelper.pas',
   StringGridHelper in 'Lib\TemplateForms\StringGridHelper.pas',
   TemplateForm in 'Lib\TemplateForms\TemplateForm.pas' {TemplateForm},
-  uFileSecurityUtils in 'Lib\uFileSecurityUtils.pas',
-  uCentralLogger in 'Lib\uCentralLogger.pas',
-  uExceptionHandler in 'Lib\uExceptionHandler.pas',
-  ufdConnectionHelper in 'Lib\ufdConnectionHelper.pas',
-  uFDQueryHelper in 'Lib\uFDQueryHelper.pas';
+  uCentralLogger in 'Lib\helpers\uCentralLogger.pas',
+  uExceptionHandler in 'Lib\helpers\uExceptionHandler.pas',
+  ufdConnectionHelper in 'Lib\helpers\ufdConnectionHelper.pas',
+  uFDQueryHelper in 'Lib\helpers\uFDQueryHelper.pas',
+  uFileSecurityUtils in 'Lib\helpers\uFileSecurityUtils.pas';
 
 {$R *.res}
 
