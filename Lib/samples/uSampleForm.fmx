@@ -1,0 +1,378 @@
+object SampleForm: TSampleForm
+  Left = 0
+  Top = 0
+  Caption = 'Product Management - CamPLM Sample'
+  ClientHeight = 760
+  ClientWidth = 860
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object LabelProductName: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Product Name:'
+    TabOrder = 0
+  end
+  object EditProductName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 16.000000000000000000
+    Position.Y = 36.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object LabelProductCode: TLabel
+    Position.X = 432.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Product Code:'
+    TabOrder = 1
+  end
+  object EditProductCode: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 432.000000000000000000
+    Position.Y = 36.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object LabelLanguage: TLabel
+    Position.X = 648.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 196.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Language:'
+    TabOrder = 2
+  end
+  object ComboBoxLanguage: TComboBox
+    Position.X = 648.000000000000000000
+    Position.Y = 36.000000000000000000
+    Size.Width = 196.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnChange = ComboBoxLanguageChange
+  end
+  object LabelCategory: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Category:'
+    TabOrder = 3
+  end
+  object ComboBoxCategory: TComboBox
+    Position.X = 16.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object LabelPrice: TLabel
+    Position.X = 212.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 140.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Unit Price:'
+    TabOrder = 4
+  end
+  object NumberBoxPrice: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Cursor = crIBeam
+    Position.X = 212.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 140.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object LabelStock: TLabel
+    Position.X = 368.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 140.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Stock Quantity:'
+    TabOrder = 5
+  end
+  object NumberBoxStock: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Cursor = crIBeam
+    Position.X = 368.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 140.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object LabelPriority: TLabel
+    Position.X = 524.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Priority (1-10):'
+    TabOrder = 6
+  end
+  object SpinBoxPriority: TSpinBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Cursor = crIBeam
+    Position.X = 524.000000000000000000
+    Position.Y = 100.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object LabelManufactureDate: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Manufacture Date:'
+    TabOrder = 7
+  end
+  object DateEditManufacture: TDateEdit
+    Date = 45706.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 164.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+  end
+  object LabelRestockTime: TLabel
+    Position.X = 232.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Restock Alert Time:'
+    TabOrder = 8
+  end
+  object TimeEditRestockAlert: TTimeEdit
+    Time = 0.375000000000000000
+    Position.X = 232.000000000000000000
+    Position.Y = 164.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+  end
+  object CheckBoxActive: TCheckBox
+    Position.X = 448.000000000000000000
+    Position.Y = 148.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Active Product'
+    IsChecked = True
+  end
+  object CheckBoxFeatured: TCheckBox
+    Position.X = 448.000000000000000000
+    Position.Y = 174.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Featured Product'
+  end
+  object LabelCondition: TLabel
+    Position.X = 644.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Condition:'
+    TabOrder = 11
+  end
+  object RadioButtonNew: TRadioButton
+    GroupName = 'Condition'
+    Position.X = 644.000000000000000000
+    Position.Y = 164.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = 'New'
+    IsChecked = True
+  end
+  object RadioButtonUsed: TRadioButton
+    GroupName = 'Condition'
+    Position.X = 736.000000000000000000
+    Position.Y = 164.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Used'
+  end
+  object LabelDescription: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Description:'
+    TabOrder = 14
+  end
+  object MemoDescription: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 16.000000000000000000
+    Position.Y = 228.000000000000000000
+    Size.Width = 828.000000000000000000
+    Size.Height = 72.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+    Viewport.Width = 828.000000000000000000
+    Viewport.Height = 72.000000000000000000
+  end
+  object LabelFeatures: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 312.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Product Features:'
+    TabOrder = 16
+  end
+  object ListBoxFeatures: TListBox
+    Position.X = 16.000000000000000000
+    Position.Y = 332.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+  end
+  object ButtonAddFeature: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 460.000000000000000000
+    Size.Width = 190.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    Text = 'Add Feature'
+    OnClick = ButtonAddFeatureClick
+  end
+  object ButtonClearFeatures: TButton
+    Position.X = 220.000000000000000000
+    Position.Y = 460.000000000000000000
+    Size.Width = 196.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 19
+    Text = 'Clear Features'
+    OnClick = ButtonClearFeaturesClick
+  end
+  object LabelOrderHistory: TLabel
+    Position.X = 432.000000000000000000
+    Position.Y = 312.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Order History:'
+    TabOrder = 20
+  end
+  object StringGridOrderHistory: TStringGrid
+    Position.X = 432.000000000000000000
+    Position.Y = 332.000000000000000000
+    Size.Width = 412.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 21
+  end
+  object ButtonAddOrder: TButton
+    Position.X = 432.000000000000000000
+    Position.Y = 460.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 22
+    Text = 'Add Order Row'
+    OnClick = ButtonAddOrderClick
+  end
+  object ButtonNew: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 23
+    Text = 'New'
+    OnClick = ButtonNewClick
+  end
+  object ButtonSave: TButton
+    Position.X = 152.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 24
+    Text = 'Save'
+    OnClick = ButtonSaveClick
+  end
+  object ButtonDelete: TButton
+    Position.X = 288.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 25
+    Text = 'Delete'
+    OnClick = ButtonDeleteClick
+  end
+  object ButtonShowJSON: TButton
+    Position.X = 424.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 26
+    Text = 'Show JSON'
+    OnClick = ButtonShowJSONClick
+  end
+  object LabelLoadRecord: TLabel
+    Position.X = 560.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Load Record by ID:'
+    TabOrder = 27
+  end
+  object EditLoadID: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 27
+    Position.X = 560.000000000000000000
+    Position.Y = 528.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ButtonLoad: TButton
+    Position.X = 672.000000000000000000
+    Position.Y = 508.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 28
+    Text = 'Load'
+    OnClick = ButtonLoadClick
+  end
+end

@@ -1,0 +1,132 @@
+{
+  "LabelProductName": {
+    "en": "Product Name:",
+    "tr": "Ürün Adı:",
+    "de": "Produktname:"
+  },
+  "LabelProductCode": {
+    "en": "Product Code:",
+    "tr": "Ürün Kodu:",
+    "de": "Produktcode:"
+  },
+  "LabelCategory": {
+    "en": "Category:",
+    "tr": "Kategori:",
+    "de": "Kategorie:"
+  },
+  "LabelPrice": {
+    "en": "Unit Price:",
+    "tr": "Birim Fiyat:",
+    "de": "Stückpreis:"
+  },
+  "LabelStock": {
+    "en": "Stock Quantity:",
+    "tr": "Stok Miktarı:",
+    "de": "Lagermenge:"
+  },
+  "LabelPriority": {
+    "en": "Priority (1-10):",
+    "tr": "Öncelik (1-10):",
+    "de": "Priorität (1-10):"
+  },
+  "LabelManufactureDate": {
+    "en": "Manufacture Date:",
+    "tr": "Üretim Tarihi:",
+    "de": "Herstellungsdatum:"
+  },
+  "LabelRestockTime": {
+    "en": "Restock Alert Time:",
+    "tr": "Stok Uyarı Saati:",
+    "de": "Nachbestellzeit:"
+  },
+  "LabelDescription": {
+    "en": "Description:",
+    "tr": "Açıklama:",
+    "de": "Beschreibung:"
+  },
+  "LabelFeatures": {
+    "en": "Product Features:",
+    "tr": "Ürün Özellikleri:",
+    "de": "Produktmerkmale:"
+  },
+  "LabelOrderHistory": {
+    "en": "Order History:",
+    "tr": "Sipariş Geçmişi:",
+    "de": "Bestellverlauf:"
+  },
+  "LabelCondition": {
+    "en": "Condition:",
+    "tr": "Durum:",
+    "de": "Zustand:"
+  },
+  "LabelLanguage": {
+    "en": "Language:",
+    "tr": "Dil:",
+    "de": "Sprache:"
+  },
+  "LabelLoadRecord": {
+    "en": "Load Record by ID:",
+    "tr": "ID ile Kayıt Yükle:",
+    "de": "Datensatz per ID laden:"
+  },
+  "CheckBoxActive": {
+    "en": "Active Product",
+    "tr": "Aktif Ürün",
+    "de": "Aktives Produkt"
+  },
+  "CheckBoxFeatured": {
+    "en": "Featured Product",
+    "tr": "Öne Çıkan Ürün",
+    "de": "Empfohlenes Produkt"
+  },
+  "RadioButtonNew": {
+    "en": "New",
+    "tr": "Yeni",
+    "de": "Neu"
+  },
+  "RadioButtonUsed": {
+    "en": "Used",
+    "tr": "Kullanılmış",
+    "de": "Gebraucht"
+  },
+  "ButtonSave": {
+    "en": "Save",
+    "tr": "Kaydet",
+    "de": "Speichern"
+  },
+  "ButtonNew": {
+    "en": "New",
+    "tr": "Yeni",
+    "de": "Neu"
+  },
+  "ButtonDelete": {
+    "en": "Delete",
+    "tr": "Sil",
+    "de": "Löschen"
+  },
+  "ButtonLoad": {
+    "en": "Load",
+    "tr": "Yükle",
+    "de": "Laden"
+  },
+  "ButtonShowJSON": {
+    "en": "Show JSON",
+    "tr": "JSON Göster",
+    "de": "JSON anzeigen"
+  },
+  "ButtonAddFeature": {
+    "en": "Add Feature",
+    "tr": "Özellik Ekle",
+    "de": "Merkmal hinzufügen"
+  },
+  "ButtonClearFeatures": {
+    "en": "Clear Features",
+    "tr": "Özellikleri Temizle",
+    "de": "Merkmale löschen"
+  },
+  "ButtonAddOrder": {
+    "en": "Add Order Row",
+    "tr": "Sipariş Satırı Ekle",
+    "de": "Bestellzeile hinzufügen"
+  }
+}
