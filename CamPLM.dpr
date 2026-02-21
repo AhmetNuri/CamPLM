@@ -4,7 +4,7 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   FireDAC.DApt,
-  uMainFrm in 'uMainFrm.pas' {Form6},
+  uMainFrm in 'uMainFrm.pas' {MenuForm},
   EnhancedExampleForm in 'Lib\TemplateForms\EnhancedExampleForm.pas',
   ExampleCustomerForm in 'Lib\TemplateForms\ExampleCustomerForm.pas' {ExampleCustomerForm},
   FormController in 'Lib\TemplateForms\FormController.pas',
@@ -23,7 +23,6 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm6, Form6);
-  Application.CreateForm(TExampleCustomerForm, FrmExampleCustomerForm);
+  Application.CreateForm(TMenuForm, MenuForm);
   Application.Run;
 end.
